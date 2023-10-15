@@ -16,7 +16,7 @@ export default function Home() {
         />
       </div>
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold text-center">StarllerX</h1>
+        <h1 className="text-4xl font-bold text-center">stellarX</h1>
         <p className="text-xl text-center">Cross chain lending protocol</p>
       </div>
       <Link className="bg-white text-center text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 mt-12 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110" href='/dashboard'>Enter</Link>
