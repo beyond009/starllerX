@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import './index.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -18,8 +19,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold text-center">StarllerX</h1>
         <p className="text-xl text-center">Cross chain lending protocol</p>
       </div>
-      <button className="bg-white text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 mt-12 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110">Enter</button>
-
+      <Link className="bg-white text-center text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 mt-12 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110" href='/dashboard'>Enter</Link>
     </main>
   )
 }
