@@ -1,12 +1,14 @@
 'use client';
 import { Modal } from "flowbite-react";
 import { Tabs } from "flowbite-react";
+import { useState } from "react";
 
 interface ConfirmModalProps {
   openModal: boolean;
   setOpenModal: (value: boolean) => void;
 }
 export function BorrowConfirmModal({ openModal, setOpenModal }: ConfirmModalProps) {
+  const [value, setValue] = useState<string>('')
   return <Modal show={openModal} onClose={() => setOpenModal(false)}>
     <Modal.Body>
       <Tabs.Group
@@ -21,7 +23,7 @@ export function BorrowConfirmModal({ openModal, setOpenModal }: ConfirmModalProp
             <p className="leading-relaxed text-gray-500 dark:text-gray-400 text-2xl">
               Amount
             </p>
-            <input type="text" className="w-full px-3 py-2 text-gray-700 border bg-transparent rounded-lg focus:outline-none focus:ring focus:border-blue-500 dark:text-white" placeholder="Enter amount" />
+            <input type="text" className="w-full px-3 py-2 text-gray-700 border bg-transparent rounded-lg focus:outline-none focus:ring focus:border-blue-500 dark:text-white" placeholder="Enter amount" onChange={(e) => e.target.value} />
           </div>
         </Tabs.Item>
         <Tabs.Item
