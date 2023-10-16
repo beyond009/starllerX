@@ -41,6 +41,19 @@ export default function Dashboard() {
           <div className="text-2xl flex-1">ETH</div>
           <button className="bg-white text-center text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110" onClick={() => setShowModal(true)}>Supply</button>
         </div>
+        <div className="w-full rounded border border-gray-300 p-4 flex gap-4 items-center">
+          <div className='relative'>
+            <Image
+              src="/btc.svg"
+              alt="btc"
+              width={40}
+              height={40}
+            />
+            <Ethereum className="w-4 h-4 absolute bottom-[-2px] right-0" />
+          </div>
+          <div className="text-2xl flex-1">WBTC</div>
+          <button className="bg-white text-center text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110" onClick={() => setShowModal(true)}>Supply</button>
+        </div>
       </div>
       <div className="flex flex-col p-6 gap-6 items-center bg-white/80 dark:bg-black shadow rounded w-[600px] h-[600px]">
         <div className="text-2xl">Borrow</div>
@@ -69,6 +82,19 @@ export default function Dashboard() {
 
           </div>
           <div className="text-2xl flex-1">ETH</div>
+          <button className="bg-white text-center text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110" onClick={() => setShowBorrowModal(true)}>Borrow</button>
+        </div>
+        <div className="w-full rounded border border-gray-300 p-4 flex gap-4 items-center">
+          <div className='relative'>
+            <Image
+              src="/btc.svg"
+              alt="btc"
+              width={40}
+              height={40}
+            />
+            <Polygon className="w-4 h-4 absolute bottom-[-2px] right-0" />
+          </div>
+          <div className="text-2xl flex-1">WBTC</div>
           <button className="bg-white text-center text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110" onClick={() => setShowBorrowModal(true)}>Borrow</button>
         </div>
       </div>
