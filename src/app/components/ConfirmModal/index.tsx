@@ -16,7 +16,7 @@ export function ConfirmModal({ openModal, setOpenModal }: ConfirmModalProps) {
       address: '0xbc4932dec4ff14b21fd6a188bd989c5238015b6b',
       abi: simpleBorrowABI,
       functionName: 'supply',
-      args: ['0x29f2D40B0605204364af54EC677bD022dA425d03', Number(supplyValue) * 1e18]
+      args: ['0x29f2D40B0605204364af54EC677bD022dA425d03', 1e7]
     })
   }
   return <Modal show={openModal} onClose={() => setOpenModal(false)}>

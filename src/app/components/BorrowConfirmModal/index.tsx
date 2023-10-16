@@ -2,6 +2,8 @@
 import { Modal } from "flowbite-react";
 import { Tabs } from "flowbite-react";
 import { useState } from "react";
+import { writeContract } from '@wagmi/core'
+import { abi as sender } from '../../abi/sender.json'
 
 interface ConfirmModalProps {
   openModal: boolean;
@@ -9,6 +11,14 @@ interface ConfirmModalProps {
 }
 export function BorrowConfirmModal({ openModal, setOpenModal }: ConfirmModalProps) {
   const [value, setValue] = useState<string>('')
+  const handleBorrow = async () => {
+    const hash = await writeContract({
+      address: '0x9e87c722d4AeDDa7b0Cc5D2B639C3c7d4943e943',
+      abi: sender,
+      functionName: 'sendMessage',
+      args: [12532609583862916517, '0xdf9479F11f28A6e887175df04E36E6848f27E32b', { user: '0xdf9479F11f28A6e887175df04E36E6848f27E32b', callData: [], chainId: 80001, destinationExacuteContract: '0x326C977E6efc84E512bB9C30f76E30c160eD06FB' }]
+    })
+  }
   return <Modal show={openModal} onClose={() => setOpenModal(false)}>
     <Modal.Body>
       <Tabs.Group
@@ -40,7 +50,7 @@ export function BorrowConfirmModal({ openModal, setOpenModal }: ConfirmModalProp
       </Tabs.Group>
     </Modal.Body>
     <Modal.Footer className="flex justify-center">
-      <button onClick={() => setOpenModal(false)} className="bg-white text-center text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110">Confirm</button>
+      <button onClick={() => { handleBorrow(); setOpenModal(false) }} className="bg-white text-center text-black hover:bg-black hover:text-white border border-black hover:border-white w-24 font-semibold py-2 px-4 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110">Confirm</button>
     </Modal.Footer>
   </Modal>
 }
